@@ -1,0 +1,114 @@
+:root {
+    --green: hsl(75, 94%, 57%);
+    --grey-700: hsl(0, 0%, 20%);
+    --grey-800: hsl(0, 0%, 12%);
+    --grey-900: hsl(0, 0%, 8%);
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(./assets/fonts/static/Inter-Regular.ttf);
+}
+
+body {
+    height: 100svh;
+    width: 100svw;
+    container: body / inline-size;
+    font-family: "Inter";
+    font-weight: 400;
+    background-color: var(--grey-900);
+    color: white;
+    margin: 0;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    height: 100cqh;
+    width: 100cqw;
+    container: main / inline-size;
+    text-wrap: nowrap;
+}
+
+section[class="card"] {
+    display: grid;
+    width: fit-content;
+    place-items: center;
+    gap: 10px;
+    background: var(--grey-800);
+    padding: 50px;
+    border-radius: 15px;
+}
+
+section[class="avatar-container"] img {
+    height: 100px;
+    border-radius: 50%;
+}
+
+section[class="card"] h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0;
+}
+
+section[class="card"] h2 {
+    font-weight: 600;
+    color: var(--green);
+    font-size: 1em;
+}
+
+section[class="card"] q {
+    quotes: '"' '"';
+}
+
+section[class="link"] {
+    width: 100%;
+    text-align: center;
+    background: var(--grey-700);
+    border-radius: 5px;
+    padding: 3%;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+section[class="link"]:hover {
+    background: var(--green);
+}
+
+section[class="link"]:hover a {
+    color: var(--grey-900);
+}
+
+section[class="link"] a,
+:visited {
+    color: white;
+    text-decoration: none;
+}
+
+div[class="attribution"] {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+@container body (inline-size < 1000px) {
+
+    section[class="card"] {
+        width: 80cqw;
+        height: 70cqh;
+        padding: 20px;
+        gap: 1%;
+        container: card / inline-size;
+    }
+
+    section[class="link"] {
+        width: 100cqw;
+        padding: 15px 5px 15px 5px
+    }
+
+    section[class="card"] q {
+        font-size: small;
+    }
+}
